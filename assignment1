@@ -1,3 +1,88 @@
-/** All are answered sequentially */
+# All are answered sequentially 
+
+# To create the user ngozi_altschool with a home directory
+# with a login password
+
+sudo useradd -m ngozi_altschool
 
 
+# enter the home directory of the user
+
+cd /home/ngozi_altschool/
+
+
+# create sub-directories; code, tests, personal, misc
+
+mkdir code tests personal misc
+
+
+# Change directory to the tests directory using absolute pathname
+
+cd /home/ngozi_altschool/tests
+
+
+# Change directory to the tests directory using relative pathname
+
+cd ./tests
+
+
+# Use echo command to create a file named fileA with text content ‘Hello A’ in the misc directory
+
+echo 'Hello A' > /home/ngozi_altschool/misc/fileA
+
+
+# Create an empty file named fileB in the misc directory. Populate the file with a dummy content afterwards
+
+touch /home/ngozi_altschool/misc/fileB
+echo 'assignment done' > /home/ngozi_altschool/misc/fileB
+
+
+# Copy contents of fileA into fileC
+
+cp ./misc/fileA ./misc/fileC
+
+
+# Move contents of fileB into fileD
+
+mv ./misc/fileB ./misc/fileD
+
+
+# Create a tar archive called misc.tar for the contents of misc directory
+
+tar -cvf misc.tar misc
+
+
+# Compress the tar archive to create a misc.tar.gz file
+
+gzip misc.tar
+
+
+# Create a user and force the user to change his/her password upon login
+
+su ngozi_altschool
+cd
+sudo useradd chigozie
+sudo passwd chigozie
+sudo chage --lastday 0 chigozie
+
+
+# Lock a users password
+
+sudo passwd -l chigozie
+
+
+# Create a user with no login shell
+
+sudo useradd -s /sbin/nologin mma
+
+
+# Disable password based authentication for ssh
+
+sudo vi /etc/ssh/sshd_config
+PasswordAuthentication no
+
+
+# Disable root login for ssh
+
+sudo vi /etc/ssh/sshd_config
+PermitRootLogin no
