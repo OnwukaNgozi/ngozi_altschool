@@ -40,9 +40,9 @@ ansible all -i host-inventory -m ping
 
 ![Screenshot 3](/connection%20established.png)
 
-Then run your playbook using, mine is lamp-stack.yml
+Then run your playbook using,
 
-ansible-playbook <playbookname.yml> -i host-inventory
+ansible-playbook lamp-stack.yml -i host-inventory
 
 This will copy the file to the slave VM and execute it.
 
@@ -52,12 +52,16 @@ Enter your slave VM with vagrant up slave and vagrant ssh slave on another gitba
 
 and watch the execution.
 
-When done successfully, the cloned laravel website displays with the slave ip address in the host-inventory.
+When done successfully, 
 
+![Screenshot 5](/Script%20ran%20successfully.png)
+
+The cloned laravel website displays with the slave ip address in the host-inventory.
 Here:
-![Screenshot 5](/laravel%20site%20with%20node%20ip.png)
+
+![Screenshot 6](/laravel%20site%20with%20node%20ip.png)
 
 
 And here is the cronjob working just perfect
 
-![Screenshot 6](/cronjob.png)
+![Screenshot 7](/cronjob.png)
