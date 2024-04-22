@@ -12,12 +12,12 @@
 
 First run vagrant init ubuntu/focal64 to initialize vagrant in your gitbash, then edit the Vagrantfile and provision the master and slave VM and save.
 
-![Screenshot 1](/Ansible-files/Vagrantfile.png)
+![Screenshot 1](/Vagrantfile.png)
 
 Then run vagrant up master vagrant ssh master to spin up the master VM.
 
 Running the script LAMP_stack.sh on your master to make sure it's working, you will get an end result like this.
 
-![Screenshot 2](/Ansible-files/database%20created.png)
+![Screenshot 2](/database%20created.png)
 
 
