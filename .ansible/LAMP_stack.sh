@@ -5,7 +5,7 @@ sudo apt update
 #install your apache webserver
 sudo apt install apache2
 #add the php ondrej repository
-sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:ondrej/php --yes
 #update your repository again
 sudo apt update
 # install php8.2
@@ -19,7 +19,8 @@ sudo systemctl restart apache2
 #change directory in the bin directory
 cd /usr/bin
 install composer
-sudo curl -sS https://getcomposer.org/installer | sudo php
+sudo curl -sS https://getcomposer.org/installer | sudo php -q
+echo "You've successfully installed composer"
 #move the content of the deafault composer.phar
 sudo mv composer.phar composer
 #change directory in /var/www directory so we can clone of laravel repo there
@@ -27,9 +28,9 @@ cd /var/www/
 sudo git clone https://github.com/laravel/laravel.git
 sudo chown -R $USER:$USER /var/www/laravel
 cd laravel/
-install composer autoloader
-composer install --optimize-autoloader --no-dev
-composer update
+sudo install composer autoloader
+sudo composer install --no-interaction --optimize-autoloader --no-dev
+sudo composer update --no-interaction
 #copy the content of the default env file to .env
 sudo cp .env.example .env
 sudo chown -R www-data storage
