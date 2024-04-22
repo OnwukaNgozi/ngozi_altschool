@@ -12,6 +12,6 @@
 
 First run vagrant init ubuntu/focal64 to initialize vagrant in your gitbash, then edit the Vagrantfile and provision the master and slave VM.
 
-<img src="./Vagrantfile.png" alt="Vagrantfile sample">
+![Screenshot 1](/Vagrantfile.png.png)
 
 Running the script LAMP_stack.sh, 
