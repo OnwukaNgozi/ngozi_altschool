@@ -11,6 +11,7 @@
 # Use either the VM’s IP address or a domain name as the URL.
 
 First run vagrant init ubuntu/focal64 to initialize vagrant in your gitbash, then edit the Vagrantfile and provision the master and slave VM.
-./Vagrantfile.png
+
+<img src="./Vagrantfile.png" alt="Vagrantfile sample">
 
 Running the script LAMP_stack.sh, 
