@@ -23,23 +23,30 @@ Running the script, LAMP_stack.sh, on your master VM to make sure it's working, 
 Then create a keypair for easy access into the nodes using ssh-keygen, and copy the id_rsa.pub keys interchangeably into each other. Paste these keys in the authourised_keys file respectively.
 
 Install ansible using
+
 apt install -y software-properties-common python-apt
+
 apt install -y ansible
+
 cd into /.ansible
+
 create a file, host-inventory, and paste the ip address of your slave machine
+
 Then create your ansible playbook (a filename with .yml extension)
+
 To check is your master-slave connection is successful, run
+
 ansible all -i host-inventory -m ping
 
 ![Screenshot 3](/connection%20established.png)
 
 Then run your playbook using, mine is lamp-stack.yml
+
 ansible-playbook <playbookname.yml> -i host-inventory
 
 This will copy the file to the slave VM and execute it.
 
-Enter your slave VM with vagrant up slave and vagrant ssh slave on another gitbash
-You will see the copied .sh file 
+Enter your slave VM with vagrant up slave and vagrant ssh slave on another gitbash. You will see the copied .sh file 
 
 ![Screenshot 4](/copied%20to%20slave.png)
 
@@ -49,3 +56,8 @@ When done successfully, the cloned laravel website displays with the slave ip ad
 
 Here:
 ![Screenshot 5](/laravel%20site%20with%20node%20ip.png)
+
+
+And here is the cronjob working just perfect
+
+![Screenshot 6](/cronjob.png)
