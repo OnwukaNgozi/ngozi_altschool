@@ -34,29 +34,28 @@ create a file, host-inventory, and paste the ip address of your slave machine
 
 Then create your ansible playbook (a filename with .yml extension)
 
-To check is your master-slave connection is successful, run
+To check if your master-slave connection is successful, run
 
 ansible all -i host-inventory -m ping
 
 ![Screenshot 3](/connection%20established.png)
 
+
 Then run your playbook using,
 
 ansible-playbook lamp-stack.yml -i host-inventory
 
-This will copy the file to the slave VM and execute it.
+This will copy the file to the slave VM and execute it. When done successfully, like this 
 
-Enter your slave VM with vagrant up slave and vagrant ssh slave on another gitbash. You will see the copied .sh file 
+![Screenshot 4](/Script%20ran%20successfully.png)
 
-![Screenshot 4](/copied%20to%20slave.png)
 
-and watch the execution.
+Enter your slave VM with vagrant up slave and vagrant ssh slave on another gitbash. Here is the copied .sh file
 
-When done successfully, 
+![Screenshot 5](/copied%20to%20slave.png)
 
-![Screenshot 5](/Script%20ran%20successfully.png)
 
-The cloned laravel website displays with the slave ip address in the host-inventory.
+Then the cloned laravel website displays with the slave ip address in the host-inventory.
 Here:
 
 ![Screenshot 6](/laravel%20site%20with%20node%20ip.png)
